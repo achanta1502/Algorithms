@@ -33,6 +33,25 @@ public class Main {
 //		System.out.println(new ArthmeticExpTree().run(t1));
 		System.out.println(new MinimumDepth().run(tree));
 		System.out.println(new LeftView().run(tree));
+		
+		/**
+		 *         1
+			      / \
+			     2   3
+		 */
+		Tree<Integer> maxPath = new Tree<Integer>(10);
+		maxPath.setLeft(2);
+		maxPath.setRight(10);
+		Tree<Integer> maxPathLeft = (Tree<Integer>) maxPath.getLeft();
+		Tree<Integer> maxPathRight = (Tree<Integer>) maxPath.getRight();
+		maxPathLeft.setLeft(20);
+		maxPathLeft.setRight(1);
+		maxPathRight.setRight(-25);
+		Tree<Integer> maxPathRight2 = (Tree<Integer>) maxPathRight.getRight();
+		maxPathRight2.setLeft(3);
+		maxPathRight2.setRight(4);
+		System.out.println(maxPath);
+		System.out.println(new MaximumPathSum().run(maxPath));
 	}
 	
 

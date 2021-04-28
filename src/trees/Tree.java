@@ -26,14 +26,18 @@ public class Tree<T extends Object> {
 	public void setLeft(Tree<?> left) {
 		this.left = left;
 	}
-
-
+	
+	public void setLeft(T left) {
+		this.left = new Tree<T>(left);
+	}
 
 	public Tree<?> getRight() {
 		return right;
 	}
-
-
+	
+	public void setRight(T right) {
+		this.right = new Tree<T>(right);
+	}
 
 	public void setRight(Tree<?> right) {
 		this.right = right;
