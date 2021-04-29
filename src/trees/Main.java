@@ -54,6 +54,16 @@ public class Main {
 		Tree<Integer> fullTreeLeft = (Tree<Integer>) fullTree.getLeft();
 		fullTreeLeft.setLeft(4);
 		System.out.println(new BinaryFullTree().run(fullTree));
+		
+/**
+ *      40
+	   /   \
+	 30    80 
+	  \      \
+	  35     100 
+ */
+		System.out.println(new PreorderTraversalBTArray().run(new int[] {40, 30, 35, 80, 100}));
+
 	}
 	
 
