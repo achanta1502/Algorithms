@@ -19,11 +19,11 @@ public class Main {
 		tree.setLeft(new Tree<String>("-"));
 		tree.setRight(new Tree<String>("7"));
 		Tree<?> left = tree.getLeft();
-		left.setLeft(new Tree<String>("6"));
-		left.setRight(new Tree<String>("*"));
+		left.setLeft(new Tree("6"));
+		left.setRight(new Tree("*"));
 		Tree<?> left1 = left.getRight();
-		left1.setLeft(new Tree<String>("2")); 
-		left1.setRight(new Tree<String>("4"));
+		left1.setLeft(new Tree("2")); 
+		left1.setRight(new Tree("4"));
 		
 		List<String> tree1 = Arrays.asList("+", "-", "7", "6", "*", null, null, null, null, "2", "4");
 		System.out.println(tree1);
@@ -33,12 +33,7 @@ public class Main {
 //		System.out.println(new ArthmeticExpTree().run(t1));
 		System.out.println(new MinimumDepth().run(tree));
 		System.out.println(new LeftView().run(tree));
-		
-		/**
-		 *         1
-			      / \
-			     2   3
-		 */
+
 		Tree<Integer> maxPath = new Tree<Integer>(10);
 		maxPath.setLeft(2);
 		maxPath.setRight(10);
@@ -52,6 +47,13 @@ public class Main {
 		maxPathRight2.setRight(4);
 		System.out.println(maxPath);
 		System.out.println(new MaximumPathSum().run(maxPath));
+		
+		Tree<Integer> fullTree = new Tree<Integer>(1);
+		fullTree.setLeft(2);
+		fullTree.setRight(3);
+		Tree<Integer> fullTreeLeft = (Tree<Integer>) fullTree.getLeft();
+		fullTreeLeft.setLeft(4);
+		System.out.println(new BinaryFullTree().run(fullTree));
 	}
 	
 
