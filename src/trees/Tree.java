@@ -1,11 +1,11 @@
 package trees;
 
-public class Tree<T extends Object> {
-	private Tree<?> left;
-	private Tree<?> right;
+public class Tree<T> {
+	private Tree<T> left;
+	private Tree<T> right;
 	private T data;
 	
-	public Tree(Tree<?> left, Tree<?> right, T data) {
+	public Tree(Tree<T> left, Tree<T> right, T data) {
 		this.left = left;
 		this.right = right;
 		this.data = data;
@@ -17,13 +17,13 @@ public class Tree<T extends Object> {
 		this.right = null;
 	}
 	
-	public Tree<?> getLeft() {
+	public Tree<T> getLeft() {
 		return left;
 	}
 
 
 
-	public void setLeft(Tree<?> left) {
+	public void setLeft(Tree<T> left) {
 		this.left = left;
 	}
 	
@@ -31,7 +31,7 @@ public class Tree<T extends Object> {
 		this.left = new Tree<T>(left);
 	}
 
-	public Tree<?> getRight() {
+	public Tree<T> getRight() {
 		return right;
 	}
 	
@@ -39,7 +39,7 @@ public class Tree<T extends Object> {
 		this.right = new Tree<T>(right);
 	}
 
-	public void setRight(Tree<?> right) {
+	public void setRight(Tree<T> right) {
 		this.right = right;
 	}
 
@@ -64,7 +64,7 @@ public class Tree<T extends Object> {
 		preOrderImpl(this);
 	}
 	
-	private void preOrderImpl(Tree<?> tree) {
+	private void preOrderImpl(Tree<T> tree) {
 		if (tree == null) return;
 		if (tree.getData() != null)
 		System.out.println(tree.getData());
@@ -76,7 +76,7 @@ public class Tree<T extends Object> {
 		inOrderImpl(this);
 	}
 	
-	private void inOrderImpl(Tree<?> tree) {
+	private void inOrderImpl(Tree<T> tree) {
 		if (tree == null) return;
 		preOrderImpl(tree.getLeft());
 		if (tree.getData() != null)
@@ -88,7 +88,7 @@ public class Tree<T extends Object> {
 		postOrderImpl(this);
 	}
 	
-	private void postOrderImpl(Tree<?> tree) {
+	private void postOrderImpl(Tree<T> tree) {
 		if (tree == null) return;
 		preOrderImpl(tree.getLeft());
 		preOrderImpl(tree.getRight());
@@ -96,11 +96,11 @@ public class Tree<T extends Object> {
 		System.out.println(tree.getData());
 	}
 	
-	public boolean equals(Tree<?> t) {
+	public boolean equals(Tree<T> t) {
 		return equalsImpl(this, t);
 	}
 	
-	private boolean equalsImpl(Tree<?> tree1, Tree<?> tree2) {
+	private boolean equalsImpl(Tree<T> tree1, Tree<T> tree2) {
 		
 		if (tree1 == null && tree2 == null) {
 			return true;
@@ -114,11 +114,11 @@ public class Tree<T extends Object> {
 		return false;
 	}
 	
-	public boolean mirror(Tree<?> t) {
+	public boolean mirror(Tree<T> t) {
 		return mirrorImpl(this, t);
 	}
 	
-	private boolean mirrorImpl(Tree<?> tree1, Tree<?> tree2) {
+	private boolean mirrorImpl(Tree<T> tree1, Tree<T> tree2) {
 		
 		if (tree1 == null && tree2 == null) {
 			return true;
