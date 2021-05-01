@@ -63,7 +63,27 @@ public class Main {
 	  35     100 
  */
 		System.out.println(new PreorderTraversalBTArray().run(new int[] {40, 30, 35, 80, 100}));
-
+		
+		/**
+		 *      20
+			   /   \
+			 8     22 
+			/ \      
+		   4  12
+		      / \
+		     10 14
+		 */
+		
+		Tree<Integer> isbt = new Tree<Integer>(20);
+		isbt.setLeft(8);
+		isbt.setRight(22);
+		Tree<Integer> isbt1 = isbt.getLeft();
+		isbt1.setLeft(4);
+		isbt1.setRight(12);
+		Tree<Integer> isbt2 = isbt1.getRight();
+		isbt2.setLeft(10);
+		isbt2.setRight(14);
+		System.out.println(new InorderSuccesorSmall().run(isbt.getLeft().getRight().getRight()));
 	}
 	
 
