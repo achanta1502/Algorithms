@@ -3,32 +3,43 @@ package trees;
 public class Tree<T> {
 	private Tree<T> left;
 	private Tree<T> right;
+	private Tree<T> parent;
 	private T data;
 	
 	public Tree(Tree<T> left, Tree<T> right, T data) {
 		this.left = left;
 		this.right = right;
 		this.data = data;
+		this.parent = null;
 	}
 	
 	public Tree(T data) {
 		this.data = data;
 		this.left = null;
 		this.right = null;
+		this.parent = null;
+	}
+	
+	public Tree<T> getParent() {
+		return parent;
+	}
+	
+	public void setParent(Tree<T> parent) {
+		this.parent = parent;
 	}
 	
 	public Tree<T> getLeft() {
 		return left;
 	}
 
-
-
 	public void setLeft(Tree<T> left) {
 		this.left = left;
+		this.left.setParent(this);
 	}
 	
 	public void setLeft(T left) {
 		this.left = new Tree<T>(left);
+		this.left.setParent(this);
 	}
 
 	public Tree<T> getRight() {
@@ -37,19 +48,17 @@ public class Tree<T> {
 	
 	public void setRight(T right) {
 		this.right = new Tree<T>(right);
+		this.right.setParent(this);
 	}
 
 	public void setRight(Tree<T> right) {
 		this.right = right;
+		this.right.setParent(this);
 	}
-
-
 
 	public T getData() {
 		return data;
 	}
-
-
 
 	public void setData(T data) {
 		this.data = data;
@@ -128,7 +137,6 @@ public class Tree<T> {
 			return equalsImpl(tree1.getLeft(), tree2.getRight()) && equalsImpl(tree1.getRight(), tree2.getLeft());
 		}
 		
-
 		return false;
 	}
 }
