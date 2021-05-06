@@ -20,6 +20,7 @@ public class Main {
 		System.out.println(new PythogeronTriplet().run(new int[] {10, 4, 6, 12, 5}));
 		System.out.println(new SmallesSubarrayValue().run(new int[] {1, 11, 100, 1, 0, 200, 3, 2, 1, 250}, 280));
 		System.out.println(new SmallestValue().run(new int[] {1, 2, 6, 10, 11, 15}));
+		System.out.println(new smallestWindowSubstr().run("thisisateststring", "tist"));
 	}
 	
 }
