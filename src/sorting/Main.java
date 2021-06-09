@@ -8,6 +8,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		int[] arr = new int[] {12, 11, 13, 5, 6, 7};
 		new HeapSort().run(arr);
+		new MergeSort().run(arr);
+		new QuickSort().run(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 
